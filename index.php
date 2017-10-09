@@ -9,12 +9,38 @@
 </head>
 <link rel="stylesheet" href="public/css/style.css">
   <script src="public/js/index.js"></script>
+  <?php 
+  session_start();
+  $clss="";
+  if(isset($_SESSION['path']))
+    {
+        if($_SESSION['path']=="login" || $_SESSION['path']=="signup")
+        $clss="class='body2'";
+        else 
+        $clss="";
+    }
+    else 
+    {
+        $clss="class='body2'";
+    }
+    require 'config/config.php';
+    
+  ?>
 
-<body>
+<body <?php echo $clss;?>>
+<table>
+	<tr>
+		<td>
+			<table style="width:50%;" align="center">
+			<tr><td><img src="public/Local741_logo.png" width="80" height="80"></td>
+			<td><h1 style="color:#BA1419;">SPECIALITY TRADES UNION LTD.</h1></td></tr></table>
+			
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<?php
 
-<?php
-session_start();
-require 'config/config.php';
 
 //echo"path  :".$_SESSION['path'];
 
@@ -118,6 +144,10 @@ else{
     {
         include '/'.VIEWPATH.'member_History_Update.php';
     }
+    if($_SESSION['path']=="insurancehistory")
+    {
+        include '/'.VIEWPATH.'Insurance_History.php';
+    }
 }
     
 
@@ -132,6 +162,10 @@ print "The request path is : ".$_SERVER['PATH_INFO'];
      */
 ?>
   
+    </td>
+	</tr>
+
+</table>
     
 </body>
 </html>
