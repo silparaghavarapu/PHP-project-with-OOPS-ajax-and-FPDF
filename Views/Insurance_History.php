@@ -1,5 +1,6 @@
 <?php 
-
+require_once('/config/config.php');
+require_once('Controllers/Controller_Insurance.php');
 if(isset($_POST['mainpage']))
 {
     $_SESSION['path']="mainpage";
@@ -40,7 +41,13 @@ else
     $count=0;
     $_SESSION['start']=1;
 }
-
+if($_SESSION['first']<0)
+{
+    $_SESSION['first']=0;
+    $_SESSION['last']=5;
+    $count=0;
+    $_SESSION['start']=1;
+}
     
 
 ?>
@@ -52,15 +59,16 @@ else
 			   // echo "update value  ".$_POST['updatevalues'];
 			    if($_POST['updatevalues']<>"")
 			    {
-			        $_SESSION['path']="insuranceupdate";
-			        echo $_SESSION['path'];
-			        $_SESSION['insuranceid']=$_POST['updatevalues'];
-			           header("Location:".BASEPATH);
+			        $obj=new Controller_Insurance();
+			        $obj->DeleteInsurance($_POST['updatevalues']);
+			          // header("Location:".BASEPATH);
 			    }
 			}
 			?>
 <table>
-
+<tr>
+	<td><br></td>
+</tr>
 <tr>
 <td>
 			
@@ -69,15 +77,16 @@ else
 		<tr>
 		<td>
 		<table>
-			
+			<tr>
+				<td align="left"><h2>Hello <?php echo $_SESSION['username'];?> !</h2></td>
+			</tr>
 			<tr>
 				<td>
 					<!-- page header starts -->
 					<table>
 						<tr>
-							<td align="left"><h2>Hello <?php echo $_SESSION['username'];?> !</h2></td>
 							<td>
-								<h1>Insurance List</h1>
+								<h1>Insurance History List</h1>
 							</td>
 							<td>
 								<input type="hidden" id="updatevalues"  name="updatevalues">
@@ -99,7 +108,7 @@ else
 						</tr>
 						<tr>
 							<td>
-								<button type="submit" name="InsuranceEntry" class="button-update">Add Insurance</button>
+								
 							</td>
 							<td>
 								<select id="shopbyname" name="shopbyname" onchange="submitdoc()" class="input1">
@@ -167,19 +176,19 @@ else
 					{   
 					    if($_POST['shopbyname']=="")
 					    {
-					        $datas=$obj->showAllInsurance($_SESSION['first'],$_SESSION['last']);
+					        $datas=$obj->showAllHistInsurances($_SESSION['first'],$_SESSION['last']);
 					    }
 					    elseif($_POST['shopbyname']<>"")
 					    {
 					    $id=$_POST['shopbyname'];
-					    $datas=$obj->getInsuranceByID($id,$_SESSION['first'],$_SESSION['last']);
+					    $datas=$obj->getInsuranceHistByID($id,$_SESSION['first'],$_SESSION['last']);
 					    $_POST['shopbyname']="";
 					    }
 					   
 					}
 					else
 					{
-					    $datas=$obj->showAllInsurance($_SESSION['first'],$_SESSION['last']);
+					    $datas=$obj->showAllHistInsurances($_SESSION['first'],$_SESSION['last']);
 					}
 					if($datas<>"")
 					{    
@@ -190,15 +199,15 @@ else
 					?>
 										
 				<tr>
-					<td align="center">
+					<td>
 					<div>
-					<input type="submit" onclick="updatevalue(<?php echo $data['Insurance_ID'];?>)" name="Update" value="Update" class="button-update"></div>
+					<input type="submit" onclick="updatevalue(<?php echo $data['id'];?>)" name="Delete" value="Delete" class="button-update"></div>
     				</td>
-    				<td align="left">
+    				<td>
     					<div>
     					<label class="description" for="element_1">&nbsp;<?php echo $data['Insurance_Name'];?>&nbsp;</label></div>
     				</td>
-    				<td align="left">
+    				<td>
     				<div>
     					<label class="description" for="element_1">&nbsp;<?php echo $data['insurance_plan'];?>&nbsp;</label></div>
     				</td>

@@ -35,6 +35,13 @@ else
     $count=0;
     $_SESSION['start']=1;
 }
+if($_SESSION['first']<0)
+{
+    $_SESSION['first']=0;
+    $_SESSION['last']=5;
+    $count=0;
+    $_SESSION['start']=1;
+}
 
 ?>
     <form method="post" name="show_list" id="show_list" action="">
@@ -58,18 +65,14 @@ else
 	<tr>
 	<td>
 	
-		<table  class="memberlist">
-			<tr>
-				<td align="left">
-					Hello <?php echo $_SESSION['username'];?> !
-				</td>
-			</tr>
+		<table>
+			
 			<tr>
 				<td>
 					<!-- page header starts -->
 					<table>
 						<tr>
-							
+							<td align="left"><h2>Hello <?php echo $_SESSION['username'];?> !</h2></td>
 							<td>
 								<h1>Shops History Lists</h1>
 							</td>
@@ -80,10 +83,10 @@ else
 								<table>
 									<tr>
 										<td>
-											<input type="submit" name="mainpage" value="Close"  class="small small-primary small-block small-large">
+											<input type="submit" name="mainpage" value="Close"  class="button-close">
 										</td>
 										<td>
-											<input type="submit" name="logout" value="Logout"  class="small small-primary small-block small-large">
+											<input type="submit" name="logout" value="Logout"  class="button-logout">
 										</td>
 									</tr>
 										
@@ -278,7 +281,7 @@ else
         				?>
         				<tr>
 						<td>
-							<input type="submit" onclick="updatevalue(<?php echo $data['id'];?>)" name="View / Delete" value="View / Delete"  class="small small-primary small-block small-large">
+							<input type="submit" onclick="updatevalue(<?php echo $data['id'];?>)" name="View / Delete" value="View / Delete"  class="button-update">
         				</td>
         				<td>
 							<label class="description" for="element_1" ><?php echo $data['Shop_Name'];?></label>

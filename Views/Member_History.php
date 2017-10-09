@@ -36,6 +36,13 @@ else
     $count=0;
     $_SESSION['start']=1;
 }
+if($_SESSION['first']<0)
+{
+    $_SESSION['first']=0;
+    $_SESSION['last']=5;
+    $count=0;
+    $_SESSION['start']=1;
+}
 
     
 
@@ -63,34 +70,32 @@ else
 <td>
 			
 			
-		<table class="memberlist">
+		<table>
 		<tr>
 		<td>
 		<table>
+			
 			<tr>
-				<td align="left">
-					Hello <?php echo $_SESSION['username'];?> !
-				</td>
-			</tr>
-			<tr>
+				
 				<td>
 					<!-- page header starts -->
 					<table>
 						<tr>
+							<td align="left"><h2>Hello <?php echo $_SESSION['username'];?> !</h2></td>
 							<td>
-								<h1>Members List</h1>
+								<h1>Members History List</h1>
 							</td>
 							<td>
-								<input type="hidden" id="updatevalues"  name="updatevalues"><input class="input1" type="text" value="" name="search" id="search"><input type="submit" name="seach_button" id="search_button" value="Search"  class="small small-primary small-block small-large">
+								<input type="hidden" id="updatevalues"  name="updatevalues"><input class="input1" type="text" value="" name="search" id="search" placeholder="Search"><input type="submit" name="seach_button" id="search_button" value=""  class="input-search">
 							</td>
 							<td>
 								<table>
 									<tr>
 										<td>
-											<input type="submit" name="mainpage" value="Close"  class="small small-primary small-block small-large">
+											<input type="submit" name="mainpage" value="Close"  class="button-close">
 										</td>
 										<td>
-											<input type="submit" name="logout" value="Logout"  class="small small-primary small-block small-large">
+											<input type="submit" name="logout" value="Logout"  class="button-logout">
 										</td>
 									</tr>
 										
@@ -134,7 +139,7 @@ else
 								<div class="multiselect">
                                     <div class="selectBox" onclick="showCheckboxes()">
                                       <select class="input1">
-                                        <option>Show Or Hide</option>
+                                        <option>Show / Hide</option>
                                       </select>
                                       <div class="overSelect"></div>
                                     </div>
@@ -328,58 +333,58 @@ else
 				<tr>
 					<td>
 					<div>
-					<input type="submit" onclick="updatevalue(<?php echo $data['id'];?>)" name="Update" value="View / Delete" class="small small-primary small-block small-large"></div>
+					<input type="submit" onclick="updatevalue(<?php echo $data['id'];?>)" name="Update" value="View / Delete" class="button-update"></div>
     				</td>
-    				<td>
+    				<td  align="left">
     					<div>
     					<label class="description" for="element_1">&nbsp;<?php echo $data['First_Name'];?>&nbsp;</label></div>
     				</td>
-    				<td>
+    				<td  align="left">
     				<div>
     					<label class="description" for="element_1">&nbsp;<?php echo $data['Last_Name'];?>&nbsp;</label></div>
     				</td>
-    				<td>
+    				<td  align="left">
     					<div>
     					<label class="description" for="element_1">&nbsp;<?php echo $data['Email_id'];?>&nbsp;</label></div>
     				</td>
-    				<td>
+    				<td  align="left">
     					<div>
     					<label class="description" for="element_1">&nbsp;<?php echo $data['DOB'];?>&nbsp;</label></div>
     				</td>
-    				<td>
+    				<td  align="left">
     					<div>
     					<label class="description" for="element_1">&nbsp;<?php echo $data['SSN'];?>&nbsp;</label></div>
     				</td>
-    				<td>
+    				<td  align="left">
     					<div>
     					<label class="description" for="element_1">&nbsp;<?php echo $data['Business_Phone'];?>&nbsp;</label></div>
     				</td>
-    				<td>
+    				<td  align="left">
     					<div>
     					<label class="description" for="element_1">&nbsp;<?php echo $data['Home_phone'];?>&nbsp;</label></div>
     				</td>
-    				<td>
+    				<td  align="left">
     					<div>
     					<label class="description" for="element_1">&nbsp;<?php echo $data['Mobile_phone'];?>&nbsp;</label></div>
     				</td>
-    				<td>
+    				<td  align="left">
     					<div>
     					<label class="description" for="element_1">&nbsp;<?php echo $data['Address'].",",$data['City'].",".$data['State'].",".$data['Zip'];?>&nbsp;</label></div>
     				</td>
     				
-    				<td>
+    				<td  align="left">
     					<div>
     					<label class="description" for="element_1">&nbsp;<?php echo $data['Shop_Name'];?>&nbsp;</label></div>
     				</td>
-    				<td>
+    				<td  align="left">
     					<div>
     					<label class="description" for="element_1">&nbsp;<?php echo $data['Insurance_Name'];?>&nbsp;</label></div>
     				</td>
-    				<td>
+    				<td  align="left">
     					<div>
     					<label class="description" for="element_1">&nbsp;<?php echo $data['Hire_Date'];?>&nbsp;</label></div>
     				</td>
-    				<td>
+    				<td  align="left">
     					<div>
     					<label class="description" for="element_1">&nbsp;<?php echo $data['Termination_Date'];?>&nbsp;</label></div>
     				</td>

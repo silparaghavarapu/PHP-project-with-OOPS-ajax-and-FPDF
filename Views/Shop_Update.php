@@ -27,7 +27,7 @@ if(isset($_POST['Update']))
 }
 
 ?>
- <div class="shop">	
+ <div>	
     
     <table>
     	<tr>
@@ -35,10 +35,10 @@ if(isset($_POST['Update']))
     			<form method="post" action="" enctype="multipart/form-data">
     			<table>
     				<tr>
-    					<td>Hello <?php echo $_SESSION['username'];?> !</td>
+    					<td align="left"><h2>Hello <?php echo $_SESSION['username'];?> !</h2></td>
     					
-    					<td><input type="submit" class="small small-primary small-block small-large" name="mainpage" value="Close"></td>
-    					<td><input type="submit" class="small small-primary small-block small-large" name="logout" value="Logout"></td>
+    					<td><input type="submit" class="button-close" name="mainpage" value="Close"></td>
+    					<td><input type="submit" class="button-logout" name="logout" value="Logout"></td>
     				</tr>
     			</table>
     			</form>
@@ -234,12 +234,39 @@ if(isset($_POST['Update']))
         				<td colspan="2"  align="center">
         					<!-- Insurance table starts -->
         						<table>
+        							
         							<tr>
         								<td  align="left">
         									<fieldset>
                                               <legend>Select Insurance</legend>
                                               	<div class="my-overflow">
                                               <table>
+                                              	<tr>
+                                              	  		<td align="left">
+                                              	  			  <label class="fontstyles1" for="element_1">Select</label>                                                    	
+                                                          </td>
+                                                          <td>
+                                                          	<label class="fontstyles1" for="element_1" >&nbsp;Insurance&nbsp;Name&nbsp;&nbsp;</label>
+                                                          </td>
+                                                          <td>
+                                                          	<label class="fontstyles1" for="element_1" >Plan</label>
+                                                          </td>
+                                                          <td>
+                                                          	<label class="fontstyles1" for="element_1">Insurance&nbsp;Amount</label>
+                                                          </td>
+                                                          <td>
+                                                          	<label class="fontstyles1" for="element_1">Due&nbsp;Amount</label>
+                                                          </td>
+                                                          <td>
+                                                          	<label class="fontstyles1" for="element_1">Initiation</label>
+                                                          </td>	
+                                                          <td>
+                                                          	<label class="fontstyles1" for="element_1">Premium</label>
+                                                          </td>
+                                                          <td>
+                                                          	<label class="fontstyles1" for="element_1">Jiff&nbsp;Fund</label>
+                                                          </td>
+                                                      </tr>
                                                   <?php 
                                                   require_once CONTROLLERPATH.'Controller_Insurance.php';
                                                   $obj=new Controller_Insurance();
@@ -356,7 +383,7 @@ if(isset($_POST['Update']))
         			</tr>	
         			<tr >
         				<td  align="center" colspan=2>
-        					<input  class="small small-primary small-block small-large" type="submit" name="Update" value="Update">
+        					<input  class="button-save" type="submit" name="Update" value="Update">
         				</td>
         				
         			</tr>		

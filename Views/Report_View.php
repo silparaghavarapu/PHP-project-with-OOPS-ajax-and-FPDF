@@ -26,6 +26,7 @@ if(isset($_POST['logout']))
 		<td>
 			<table>
 				<tr>
+				<td align="left"><h2>Hello <?php echo $_SESSION['username'];?> !</h2></td>
 					<td>
 						<input type="submit" name="mainpage" value="Close">
 					</td>
@@ -533,7 +534,7 @@ $pdf->SetFont('');
 // Second page
 //$pdf->AddPage();
 //$pdf->SetLink($link);
-//$pdf->Image('logo.png',10,12,30,0,'','http://www.fpdf.org');
+//$pdf->Image('logo.png',10,12,30,0,'','');
 //$pdf->SetLeftMargin(45);
 $pdf->SetFontSize(14);
 //$pdf->WriteHTML($html);
@@ -575,16 +576,10 @@ $columns[] = $col;
 
 }
 $pdf->WriteTables($columns);
-//$pdf->Write(5,"To find out what's new in this tutorial, click ");
-//$pdf->SetFont('','U');
-//$link = $pdf->AddLink();
-//$y = 30;
- //$x = 10;
- //$pdf->setXY(15, 30);
-// $pdf->SetFont('Arial','',10);
+
 $pdf->AliasNbPages();
  $pdf->SetTextColor(58,143,181);
-// $pdf->Cell(40, 8, "Specality Trades Union Local 741", 2);   // CHANGE THESE TO REPRESENT YOUR FIELDS
+
  $pdf->setXY(15, 30);
  $pdf->SetFont('Arial','',10);
  $pdf->SetTextColor(58,143,181);
@@ -598,17 +593,7 @@ $pdf->AliasNbPages();
 $pdf->SetTextColor(0,0,0);
  $pdf->setXY(120, 30);
 
-/*$html='<table>
-<tr>
-    
-</tr>
-<tr>
-<td width="200" height="30">cell 1</td><td width="200" height="30" bgcolor="#D0D0FF">cell 2</td>
-</tr>
-<tr>
-<td width="200" height="30">cell 3</td><td width="200" height="30">cell 4</td>
-</tr>
-</table>';*/
+
 
 $pdf->WriteHTML($html);
 // Show PDF

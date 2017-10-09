@@ -1,5 +1,3 @@
-
-
   <div class="login">
 	<h1>Login</h1>
 	<?php 
@@ -44,18 +42,20 @@
     			</td>
     		</tr>
     		<tr>
+    			<td><b>User Name</b></td>
     			<td>
     				<input type="text" class="input1" name="Username" placeholder="Username" required="required" />
     			</td>
     		</tr>
     		<tr>
+    			<td><b>Password</b></td>
     			<td>
     				<input type="password" class="input1" name="password" placeholder="Password" required="required" />
     			</td>
     		</tr>
     		<tr>
-    			<td>
-    				<button type="submit" name="loginsubmit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+    			<td colspan=2 align="center">
+    				<button type="submit" name="loginsubmit" class="btn btn-primary btn-block btn-large">Login</button>
     			</td>
     		</tr>
     		

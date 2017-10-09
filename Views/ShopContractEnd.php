@@ -38,32 +38,27 @@ if(isset($_POST['shopEntry']))
 	<tr>
 	<td>
 	
-		<table  class="memberlist">
-			<tr>
-				<td align="left">
-					Hello <?php echo $_SESSION['username'];?> !
-				</td>
-			</tr>
+		<table>
+			
 			<tr>
 				<td>
 					<!-- page header starts -->
 					<table>
 						<tr>
-							
+							<td align="left"><h2>Hello <?php echo $_SESSION['username'];?> !</h2></td>
 							<td>
-								<h1>Shops List</h1>
-							</td>
-							<td>
+								<h1>Shops Contract Ending Soon</h1>
 								<input type="hidden" id="updatevalues"  name="updatevalues">
 							</td>
+							
 							<td>
 								<table>
 									<tr>
 										<td>
-											<input type="submit" name="mainpage" value="Close"  class="small small-primary small-block small-large">
+											<input type="submit" name="mainpage" value="Close"  class="button-close">
 										</td>
 										<td>
-											<input type="submit" name="logout" value="Logout"  class="small small-primary small-block small-large">
+											<input type="submit" name="logout" value="Logout"  class="button-logout">
 										</td>
 									</tr>
 										
@@ -73,7 +68,7 @@ if(isset($_POST['shopEntry']))
 						</tr>
 						<tr>
 							<td>
-								<button type="submit" name="shopEntry" class="btn btn-primary btn-block btn-large">Shop Entry</button>
+								<button type="submit" name="shopEntry" class="button-update">Shop Entry</button>
 							</td>
 							<td>
 								<select id="shopbyname" name="shopbyname" class="input1"  onchange="submitdoc()">
@@ -229,7 +224,7 @@ if(isset($_POST['shopEntry']))
         					}
         					else
         					{
-        					    $id=60;
+        					    $id=90;
         					    $datas=$obj->showAllContractEnds($id);
         					}
         					if($datas<>"")
@@ -240,7 +235,7 @@ if(isset($_POST['shopEntry']))
         				?>
         				<tr>
 						<td>
-							<input type="submit" onclick="updatevalue(<?php echo $data['Shop_ID'];?>)" name="Update" value="Update"  class="small small-primary small-block small-large">
+							<input type="submit" onclick="updatevalue(<?php echo $data['Shop_ID'];?>)" name="Update" value="Update"  class="button-update">
         				</td>
         				<td>
 							<label class="description" for="element_1" ><?php echo $data['Shop_Name'];?></label>

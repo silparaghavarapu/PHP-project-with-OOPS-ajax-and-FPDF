@@ -27,7 +27,7 @@ if(isset($_POST['Delete']))
 }
 
 ?>
- <div class="shop">	
+ <div>	
     
     <table>
     	<tr>
@@ -35,10 +35,10 @@ if(isset($_POST['Delete']))
     			<form method="post" action="" enctype="multipart/form-data">
     			<table>
     				<tr>
-    					<td>Hello <?php echo $_SESSION['username'];?> !</td>
+    					<td align="left"><h2>Hello <?php echo $_SESSION['username'];?> !</h2></td>
     					
-    					<td><input type="submit" class="small small-primary small-block small-large" name="mainpage" value="Close"></td>
-    					<td><input type="submit" class="small small-primary small-block small-large" name="logout" value="Logout"></td>
+    					<td><input type="submit" class="button-close" name="mainpage" value="Close"></td>
+    					<td><input type="submit" class="button-logout" name="logout" value="Logout"></td>
     				</tr>
     			</table>
     			</form>
@@ -356,7 +356,7 @@ if(isset($_POST['Delete']))
         			</tr>	
         			<tr >
         				<td  align="center" colspan=2>
-        					<input  class="small small-primary small-block small-large" type="submit" name="Delete" value="Delete">
+        					<input  class="button-save" type="submit" name="Delete" value="Delete">
         				</td>
         				
         			</tr>		

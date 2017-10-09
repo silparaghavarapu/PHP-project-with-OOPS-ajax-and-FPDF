@@ -46,7 +46,7 @@ else
     
 
 ?>
-<div class="members">
+
     <form method="post" action="" id="show_list" name="show_list">
     <?php 
 			if(isset($_POST['updatevalues']))
@@ -62,36 +62,29 @@ else
 			}
 			?>
 
-    <table>
-    <tr>
-    	<td><br></td>
-    </tr>
-    <tr>
-    	<td>
+    
     		<table>
     		
-			<tr>
-				<td align="left">
-					Hello <?php echo $_SESSION['username'];?> !
-				</td>
-			</tr>
+			
 			<tr>
 				<td>
 					<!-- page header starts -->
 					<table>
 						<tr>
-							<td>
-								<h1>Invoice</h1>
-							</td>
+							
 							
 							<td>
 								<table>
 									<tr>
+									<td align="left"><h2>Hello <?php echo $_SESSION['username'];?> !</h2></td>
+									<td>
+								<h1>Invoice</h1>
+							</td>
 										<td>
-											<input type="submit" name="mainpage" value="Close" class="small small-primary small-block small-large">
+											<input type="submit" name="mainpage" value="Close" class="button-close">
 										</td>
 										<td>
-											<input type="submit" name="logout" value="Logout" class="small small-primary small-block small-large">
+											<input type="submit" name="logout" value="Logout" class="button-logout">
 										</td>
 									</tr>
 										
@@ -211,34 +204,34 @@ else
 					<td>
 					<table>
 						<tr>
-							<td><input type="button" onclick="opendoc(<?php echo $data['Report_Id'];?>)" name="View" value="View" class="small small-primary small-block small-large"></td>
-							<td><input type="submit" onclick="updatevalue(<?php echo $data['Report_Id'];?>)" name="Delete" value="Delete" class="small small-primary small-block small-large"></td>
+							<td><input type="button" onclick="opendoc(<?php echo $data['Report_Id'];?>)" name="View" value="View" class="button-update"></td>
+							<td><input type="submit" onclick="updatevalue(<?php echo $data['Report_Id'];?>)" name="Delete" value="Delete" class="button-update"></td>
 						</tr>
 					</table>
 					
     				</td>
-    				<td>
+    				<td  align="left">
     					<div>
     					<label class="description" for="element_1">&nbsp;<?php echo $data['Shop_Name'];?>&nbsp;</label></div>
     				</td>
-    				<td>
+    				<td  align="left">
     				<div>
     					<label class="description" for="element_1">&nbsp;<?php echo $data['Report_Name'];?>&nbsp;</label></div>
     				</td>
-    				<td>
+    				<td  align="left">
     					<div>
     					<label class="description" for="element_1">&nbsp;<?php echo $data['Generated_Date'];?>&nbsp;</label></div>
     				</td>
-    				<td>
+    				<td  align="left">
     					<div>
     					<label class="description" for="element_1">&nbsp;<?php echo $data['Amount_Due'];?>&nbsp;</label></div>
     				</td>
-    				<td>
+    				<td  align="left">
     					<div>
     					<label class="description" for="element_1">&nbsp;<?php echo $data['Due_Date'];?>&nbsp;</label></div>
     					
     				</td>
-    				<td>
+    				<td  align="left">
     					<div>
     					<label class="description" for="element_1">&nbsp;<?php echo $data['Name'];?>&nbsp;</label></div>
     					
@@ -270,9 +263,7 @@ else
     	</td>
     </tr>
     </table>
-    </td>
-    </tr>
-    </table>	
+	
   	
     </form>
-  </div>
+ 

@@ -44,17 +44,17 @@ if(isset($_POST['logout']))
     
 
 ?>
- <div class="members">	
+ 
  <table>
  	<tr>
  		<td align="left">
  			<form method="post" action="">
     			<table>
     				<tr>
-    					<td align="left">Hello <?php echo $_SESSION['username'];?> !</td>
+    					<td align="left"><h2>Hello <?php echo $_SESSION['username'];?> !</h2></td>
     					
-    					<td align="left"><input type="submit" name="mainpage" value="Close"  class="btn btn-primary btn-block btn-large"></td>
-    					<td align="left"><input type="submit" name="logout" value="Logout"  class="btn btn-primary btn-block btn-large"></td>
+    					<td align="left"><input type="submit" name="mainpage" value="Close"  class="button-close"></td>
+    					<td align="left"><input type="submit" name="logout" value="Logout"  class="button-logout"></td>
     				</tr>
     			</table>
     			</form>
@@ -332,8 +332,8 @@ if(isset($_POST['logout']))
     		<td  align="center">
         		<table>
         			<tr>
-        				<td align="center"><input type="submit" name="MemberUpdate" value="Update & Close"  class="small small-primary small-block small-large"></td>
-        				<td  align="left"><input type="submit" name="MemberDelete" value="Delete"  class="small small-primary small-block small-large"></td>
+        				<td align="center"><input type="submit" name="MemberUpdate" value="Update & Close"  class="button-save"></td>
+        				<td  align="left"><input type="submit" name="MemberDelete" value="Delete"  class="button-save"></td>
         			</tr>			
         		</table>
         	</td>
@@ -350,8 +350,3 @@ if(isset($_POST['logout']))
  	</tr>
  
  </table>
-    
-   		
-    	
-   
-</div>

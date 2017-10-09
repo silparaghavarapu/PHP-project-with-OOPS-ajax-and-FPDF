@@ -40,23 +40,23 @@
 				<form method="post" action="" name="signup">
                 	<table cellpadding="8">
                 		<tr>
-                			<td class="fontstyles">Name</td>
+                			<td class="fontstyles" align="left">Name</td>
                 			<td><input type="text" name="name" placeholder="Name" class="input1" autocomplete="off"  required="required"  /></td>
                 		</tr>
                 		<tr>
-                			<td class="fontstyles">Email</td>
+                			<td class="fontstyles" align="left">Email</td>
                 			<td><input type="text" name="email" autocomplete="off" class="input1" placeholder="Email ID"  required="required"  /></td>
                 		</tr>
                 		<tr>
-                			<td class="fontstyles">User Name</td>
+                			<td class="fontstyles" align="left">User Name</td>
                 			<td><input type="text" name="username" autocomplete="off" class="input1" placeholder="User Name"  required="required"  /></td>
                 		</tr>
                 		<tr>
-                			<td class="fontstyles">Password</td>
+                			<td class="fontstyles" align="left">Password</td>
                 			<td><input type="password" name="password" autocomplete="off" class="input1" placeholder="Password"  required="required" /></td>
                 		</tr>
                 		<tr>
-                			<td class="fontstyles">Confirm Password</td>
+                			<td class="fontstyles" align="left">Confirm Password</td>
                 			<td><input type="password" name="Cpassword" autocomplete="off" class="input1" placeholder="Confirm Password"  required="required" /></td>
                 		</tr>
                 		<tr>

@@ -66,6 +66,11 @@
         $_SESSION['path']="insurancelist";
         header("Location: ".BASEPATH);
     }
+    if(isset($_POST['insuranceHistory']))
+    {
+        $_SESSION['path']="insurancehistory";
+        header("Location: ".BASEPATH);
+    }
   ?>
 <table>
 <tr>
@@ -80,11 +85,9 @@
     			<td>
         				<table>
         						<tr>
-                        			<td>
-                        				Hello <?php echo $_SESSION['username'];?> !
-                        			</td>
+                        			<td align="left"><h2>Hello <?php echo $_SESSION['username'];?> !</h2></td>
                         			<td align="right">
-                        				<input type="submit" name="logout" value="Logout" class="btn2 btn2-primary btn2-block btn2-large">
+                        				<input type="submit" name="logout" value="Logout" class="button-logout">
                         			&nbsp;&nbsp;</td>
                         		</tr>
         						
@@ -104,39 +107,39 @@
             			
             				<table>
             					<tr>
-            						<td><br>
+            						<td>
             						
-            						<button type="submit" name="shopEntry" class="btn1 btn1-primary btn1-block btn1-large">Shop Entry</button>
+            						<button type="submit" name="shopEntry" class="buttons">Shop&nbsp;Entry</button>
             						
             						</td>
             					</tr>
             					<tr>	
-            						<td><br>
-            						<button type="submit" name="ListOfShops" class="btn1 btn1-primary btn1-block btn1-large">Shop List</button>
+            						<td>
+            						<button type="submit" name="ListOfShops" class="buttons">Shop&nbsp;List</button>
             						
             						</td>
             					</tr>
             					<tr>
-            						<td><br>
-            							<button type="submit" name="contractEnd" class="btn1 btn1-primary btn1-block btn1-large">Contract Ending Soon</button>
+            						<td>
+            							<button type="submit" name="contractEnd" class="buttons">Contract&nbsp;Ending&nbsp;Soon</button>
             						
             						</td>
             					</tr>
             					<tr>
-            						<td><br>
-            							<button type="submit" name="ShopHistory" class="btn1 btn1-primary btn1-block btn1-large">History</button>
+            						<td>
+            							<button type="submit" name="ShopHistory" class="buttons">History</button>
             						
             						</td>
             					</tr>
             					<tr>
-            						<td><br>
-            							<button type="submit" name="shopReport" class="btn1 btn1-primary btn1-block btn1-large">Generate Invoice</button>
+            						<td>
+            							<button type="submit" name="shopReport" class="buttons">Generate&nbsp;Invoice</button>
             						
             						</td>
             					</tr>
             					<tr>
-            						<td><br>
-            							<button type="submit" name="shopInvoice" class="btn1 btn1-primary btn1-block btn1-large">Invoice Lists</button>
+            						<td>
+            							<button type="submit" name="shopInvoice" class="buttons">Invoice&nbsp;Lists</button>
             						
             						</td>
             					</tr>
@@ -145,26 +148,26 @@
             			<td align="center" valign="top">
             				<table>
             					<tr>
-            						<td><br>
-            						<button type="submit" name="memberEntry" class="btn1 btn1-primary btn1-block btn1-large">Member Entry Form</button>
+            						<td>
+            						<button type="submit" name="memberEntry" class="buttons">Member&nbsp;Entry&nbsp;Form</button>
             						
             						</td>
             					</tr>
             					<tr>	
-            						<td><br>
-            						<button type="submit" name="memberList" class="btn1 btn1-primary btn1-block btn1-large">Member List</button>
+            						<td>
+            						<button type="submit" name="memberList" class="buttons">Member&nbsp;List</button>
             						
             						</td>
             					</tr>
             					<tr>
-            						<td><br>
-            							<button type="submit" name="memberTerminating" class="btn1 btn1-primary btn1-block btn1-large">Member Terminating Soon</button>
+            						<td>
+            							<button type="submit" name="memberTerminating" class="buttons">Member&nbsp;Terminating&nbsp;Soon</button>
             						
             						</td>
             					</tr>
             					<tr>
-            						<td><br>
-            							<button type="submit" name="MemberHistory" class="btn1 btn1-primary btn1-block btn1-large">History</button>
+            						<td>
+            							<button type="submit" name="MemberHistory" class="buttons">History</button>
             						
             						</td>
             					</tr>
@@ -173,20 +176,25 @@
             			<td align="center" valign="top">
             				<table>
             					<tr>
-            						<td><br>
-            						<button type="submit" name="insurance" class="btn1 btn1-primary btn1-block btn1-large">Insurance Form</button>
+            						<td>
+            						<button type="submit" name="insurance" class="buttons">Insurance&nbsp;Form</button>
             						
             						</td>
             					</tr>
             					
             					<tr>
-            						<td><br>
-            							<button type="submit" name="insurancelist" class="btn1 btn1-primary btn1-block btn1-large">Insurance List</button>
+            						<td>
+            							<button type="submit" name="insurancelist" class="buttons">Insurance&nbsp;List</button>
             						
             						</td>
             						
             					</tr>
-            					
+            					<tr>
+            						<td>
+            							<button type="submit" name="insuranceHistory" class="buttons">History</button>
+            						
+            						</td>
+            					</tr>
             				</table>
             			</td>
             		</tr>

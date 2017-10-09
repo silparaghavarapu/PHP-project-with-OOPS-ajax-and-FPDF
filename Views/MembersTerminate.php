@@ -41,7 +41,14 @@ else
     $_SESSION['start']=1;
 }
 
-    
+if($_SESSION['first']<0)
+{
+    $_SESSION['first']=0;
+    $_SESSION['last']=5;
+    $count=0;
+    $_SESSION['start']=1;
+}
+
 
 ?>
 
@@ -67,20 +74,17 @@ else
 <td>
 			
 			
-		<table class="memberlist">
+		<table>
 		<tr>
 		<td>
 		<table>
-			<tr>
-				<td align="left">
-					Hello <?php echo $_SESSION['username'];?> !
-				</td>
-			</tr>
+			
 			<tr>
 				<td>
 					<!-- page header starts -->
 					<table>
 						<tr>
+							<td align="left"><h2>Hello <?php echo $_SESSION['username'];?> !</h2></td>
 							<td>
 								<h1>Members List</h1>
 							</td>
@@ -91,10 +95,10 @@ else
 								<table>
 									<tr>
 										<td>
-											<input type="submit" name="mainpage" value="Close"  class="small small-primary small-block small-large">
+											<input type="submit" name="mainpage" value="Close"  class="button-close">
 										</td>
 										<td>
-											<input type="submit" name="logout" value="Logout"  class="small small-primary small-block small-large">
+											<input type="submit" name="logout" value="Logout"  class="button-logout">
 										</td>
 									</tr>
 										
@@ -104,7 +108,7 @@ else
 						</tr>
 						<tr>
 							<td>
-								<button type="submit" name="memberEntry" class="btn btn-primary btn-block btn-large">Add Member</button>
+								<button type="submit" name="memberEntry" class="button-update">Add Member</button>
 							</td>
 							<td>
 								<select id="shopbyname" name="shopbyname" onchange="submitdoc()" class="input1">
@@ -138,7 +142,7 @@ else
 								<div class="multiselect">
                                     <div class="selectBox" onclick="showCheckboxes()">
                                       <select class="input1">
-                                        <option>Show Or Hide</option>
+                                        <option>Show / Hide</option>
                                       </select>
                                       <div class="overSelect"></div>
                                     </div>
@@ -325,7 +329,7 @@ else
 				<tr>
 					<td>
 					<div>
-					<input type="submit" onclick="updatevalue(<?php echo $data['Member_ID'];?>)" name="Update" value="Update" class="small small-primary small-block small-large"></div>
+					<input type="submit" onclick="updatevalue(<?php echo $data['Member_ID'];?>)" name="Update" value="Update" class="button-update"></div>
     				</td>
     				<td>
     					<div>

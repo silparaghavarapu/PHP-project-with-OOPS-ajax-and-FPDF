@@ -39,6 +39,13 @@ else
     $count=0;
     $_SESSION['start']=1;
 }
+if($_SESSION['first']<0)
+{
+    $_SESSION['first']=0;
+    $_SESSION['last']=5;
+    $count=0;
+    $_SESSION['start']=1;
+}
 
 ?>
     <form method="post" name="show_list" id="show_list" action="">
@@ -56,38 +63,32 @@ else
 			}
 			?>
 	<table>
-	<tr>
-		<td><br></td>
-	</tr>
+	
 	<tr>
 	<td>
 	
-		<table  class="memberlist">
-			<tr>
-				<td align="left">
-					Hello <?php echo $_SESSION['username'];?> !
-				</td>
-			</tr>
+		<table>
+			
 			<tr>
 				<td>
 					<!-- page header starts -->
 					<table>
 						<tr>
-							
+							<td align="left"><h2>Hello <?php echo $_SESSION['username'];?> !</h2></td>
 							<td>
 								<h1>Shops List</h1>
 							</td>
 							<td>
-								<input type="hidden" id="updatevalues"  name="updatevalues"><input type="text" class="input1" name="search" id="search"><input type="submit" name="seach_button" id="search_button" value="Search"  class="small small-primary small-block small-large">
+								<input type="hidden" id="updatevalues"  name="updatevalues"><input type="text" class="input1" name="search" id="search" placeholder="Search"><input type="submit" name="seach_button" id="search_button" alt="search" value="" class="input-search">
 							</td>
 							<td>
 								<table>
 									<tr>
 										<td>
-											<input type="submit" name="mainpage" value="Close"  class="small small-primary small-block small-large">
+											<input type="submit" name="mainpage" value="Close"  class="button-close">
 										</td>
 										<td>
-											<input type="submit" name="logout" value="Logout"  class="small small-primary small-block small-large">
+											<input type="submit" name="logout" value="Logout"  class="button-logout">
 										</td>
 									</tr>
 										
@@ -97,7 +98,7 @@ else
 						</tr>
 						<tr>
 							<td>
-								<button type="submit" name="shopEntry" class="btn btn-primary btn-block btn-large">Shop Entry</button>
+								<button type="submit" name="shopEntry" class="button-update">Shop Entry</button>
 							</td>
 							<td>
 								<select id="shopbyname" name="shopbyname" class="input1"  onchange="submitdoc()">
@@ -285,7 +286,7 @@ else
         				?>
         				<tr>
 						<td>
-							<input type="submit" onclick="updatevalue(<?php echo $data['Shop_ID'];?>)" name="Update" value="Update"  class="small small-primary small-block small-large">
+							<input type="submit" onclick="updatevalue(<?php echo $data['Shop_ID'];?>)" name="Update" value="Update"  class="button-update">
         				</td>
         				<td>
 							<label class="description" for="element_1" ><?php echo $data['Shop_Name'];?></label>

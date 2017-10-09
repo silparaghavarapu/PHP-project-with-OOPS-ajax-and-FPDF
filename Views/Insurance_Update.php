@@ -16,32 +16,19 @@ if(isset($_POST['logout']) || $_SESSION['username']=="")
 if(isset($_POST['insuranceUpdate']))
 {
    
-    //Echo the last database record id inserted so that you know the query inserted
-    //echo "Last ID Inserted: ".$connect->lastInsertId();
     $obj=new Model_Insurance();
-    $obj->UpdateInsurance();
+    $obj->getUpdateInsurance();
     $_SESSION['path']="mainpage";
     header("Location: ".BASEPATH);
     die();
    
-}
-if(isset($_POST['insuranceDelete']))
-{
-    
-    //Echo the last database record id inserted so that you know the query inserted
-    //echo "Last ID Inserted: ".$connect->lastInsertId();
-    $obj=new Model_Insurance();
-    $obj->DeleteInsurance();
-    $_SESSION['path']="mainpage";
-    header("Location: ".BASEPATH);
-    die();
 }
 
 $getobj=new Controller_Insurance();
 $data=$getobj->getInsurnace();
 
 ?>
-<div class='home'>
+
     <form method="post">
     
 		<table>
@@ -53,10 +40,10 @@ $data=$getobj->getInsurnace();
         		<td>
         			<table>
         				<tr>
-        					<td>Hello <?php echo $_SESSION['username'];?> !</td>
+        					<td align="left"><h2>Hello <?php echo $_SESSION['username'];?> !</h2></td>
         					
-        					<td><input type="submit" name="mainpage" value="Close" class="small small-primary small-block small-large"></td>
-        					<td><input type="submit" name="logout" value="Logout" class="small small-primary small-block small-large"></td>
+        					<td><input type="submit" name="mainpage" value="Close" class="button-close"></td>
+        					<td><input type="submit" name="logout" value="Logout" class="button-logout"></td>
         				</tr>
         			</table>
         		</td>
@@ -86,7 +73,7 @@ $data=$getobj->getInsurnace();
 					<table>
 						<tr>
 							<td>
-					<label class="description" for="element_1">Insurance Name</label>
+					<label class="fontstyles1" for="element_1">Insurance Name</label>
 				</td>
 				
 				<td>
@@ -96,7 +83,7 @@ $data=$getobj->getInsurnace();
 			</tr>
 			<tr>
 				<td>
-					<label class="description" for="element_1">Insurance Plan</label>
+					<label class="fontstyles1" for="element_1">Insurance Plan</label>
 				</td>
 				
 				<td>
@@ -123,11 +110,11 @@ $data=$getobj->getInsurnace();
 					<table>
 						<tr >
 				<td   align="center">
-					<input  class="small small-primary small-block small-large" type="submit" name="insuranceUpdate" value="Update">
+					<input  class="button-save" type="submit" name="insuranceUpdate" value="Update">
 				</td>
-				<td   align="center">
+				<!-- td   align="center">
 					<input  class="small small-primary small-block small-large" type="submit" name="insuranceDelete" value="Delete">
-				</td>
+				</td-->
 						</tr>
 					</table>
 				</td>
@@ -135,4 +122,4 @@ $data=$getobj->getInsurnace();
 		</table>
     	
     </form>
-    </div>
+    

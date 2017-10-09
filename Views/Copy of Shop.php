@@ -32,7 +32,7 @@ if(isset($_POST['ShopSubmitClose']))
 }
 
 ?>
- <div>	
+ <div class="shop">	
     
     <table>
     	<tr>
@@ -40,10 +40,10 @@ if(isset($_POST['ShopSubmitClose']))
     			<form method="post" action="" enctype="multipart/form-data">
     			<table>
     				<tr>
-    					<td align="left"><h2>Hello <?php echo $_SESSION['username'];?> !</h2></td>
+    					<td>Hello <?php echo $_SESSION['username'];?> !</td>
     					
-    					<td><input type="submit"  class="button-close" name="mainpage" value="Close"></td>
-    					<td><input type="submit"  class="button-logout" name="logout" value="Logout"></td>
+    					<td><input type="submit"  class="btn btn-primary btn-block btn-large" name="mainpage" value="Close"></td>
+    					<td><input type="submit"  class="btn btn-primary btn-block btn-large" name="logout" value="Logout"></td>
     				</tr>
     			</table>
     			</form>
@@ -54,53 +54,43 @@ if(isset($_POST['ShopSubmitClose']))
     			<form method="post" action="" enctype="multipart/form-data">
     			<table>
         			<tr>
-        				<td colspan=2  align="left">
-        				<table>
-        					<tr>
-                				<td align="left">
-                					<label class="fontstyles1" for="element_1">Shop Name &nbsp;&nbsp;</label>
-                				</td>
-                				
-                				<td align="left">
-                					&nbsp;&nbsp;<input id="Shop_name" name="Shop_name"  class="input1" value="" type="text"  required="required">
-                				</td>
-                				<td align="left"><label class="fontstyles1" for="element_1">Website</label></td>
-                                <td align="left"><input id="url" name="url"  value="" type="text" class="input1"></td>
-                			</tr>
-        				</table>
+        				<td align="right">
+        					<label class="fontstyles1" for="element_1">Shop Name &nbsp;&nbsp;</label>
+        				</td>
+        				
+        				<td align="left">
+        					&nbsp;&nbsp;<input id="Shop_name" name="Shop_name"  class="input1" value="" type="text"  required="required">
         				</td>
         			</tr>
-        			
         			<tr>
-        				<td  align="left">
+        				<td>
         					<!-- Address table starts -->
         						<table>
         							<tr>
-        								<td align="left">
-        									<fieldset>
+        								<td>
+        									<fieldset class="fieldset-auto-width">
                                               <legend>Address Details</legend>
                                               <table>
                                               	  <tr>
-                                              	  	<td align="left"><label class="fontstyles1" for="element_1">Address</label></td>
-                                              	  	<td><textarea id="Primary_address" name="Primary_address"  class="input1"  cols=2 rows=2 required="required" ></textarea></td>
+                                              	  	<td><label class="fontstyles1" for="element_1">Address</label></td>
+                                              	  	<td><input id="Primary_address" name="Primary_address"  class="input1" value="" type="text"  required="required"></td>
                                               	  </tr>
                                                   <tr>
-                                                  	<td align="left"><label class="fontstyles1" for="element_1">City</label></td>
+                                                  	<td><label class="fontstyles1" for="element_1">City</label></td>
                                                   	<td><input id="Primary_city" name="Primary_city" class="input1"  value="" type="text" required="required"></td>
                                                   </tr>
                                               	  <tr>
-                                              	  	<td align="left"><label class="fontstyles1" for="element_1">State</label></td>
+                                              	  	<td><label class="fontstyles1" for="element_1">State</label></td>
                                               	  	<td><input id="Primary_State" name="Primary_State" class="input1"  value="" type="text" required="required"></td>
                                               	  </tr>
                                               	  <tr>
-                                              	  	<td align="left"><label class="fontstyles1" for="element_1">Zip</label></td>
+                                              	  	<td><label class="fontstyles1" for="element_1">Zip</label></td>
                                               	  	<td><input id="Primary_zip" name="Primary_zip"  class="input1" value="" type="text" required="required"></td>
                                               	  </tr>
                                               	  <tr>
-                                              	  	<td align="left"><label class="fontstyles1" for="element_1">Secondary&nbsp;Address</label></td>
-                                              	  	<td><textarea id="Secondary_address" name="Secondary_address"  class="input1"  cols="2" rows="2"></textarea></td>
+                                              	  	<td><label class="fontstyles1" for="element_1">Secondary&nbsp;Address</label></td>
+                                              	  	<td><input id="Secondary_address" name="Secondary_address"  class="input1" value="" type="text"></td>
                                               	  </tr>
-                                              	  
                                               	 </table>
                                             </fieldset>
         								</td>
@@ -110,92 +100,12 @@ if(isset($_POST['ShopSubmitClose']))
         					<!-- Address table ends -->
         				</td>
         				
-        				<td align="left">
-        					<!-- Contact details starts  -->
-        						<fieldset>
-                                              <legend>Contact Details</legend>
-                                              <table>
-                                              	  <tr>
-                                              	  	<td align="left"><label class="fontstyles1" for="element_1">Primary Contact</label></td>
-                                              	  	<td><input id="Primary_contact" name="Primary_contact"  value="" type="text" class="input1" required="required"></td>
-                                              	  	<td align="left"><label class="fontstyles1" for="element_1">Secondary Contact</label></td>
-                                              	  	<td><input id="Secondary_contact" name="Secondary_contact"  value="" type="text" class="input1"></td>
-                                              	  	
-                                              	  </tr>
-                                                  <tr>
-                                                  	<td align="left"><label class="fontstyles1" for="element_1">Primary Phone</label></td>
-                                                  	<td><input id="Primary_phone" name="Primary_phone"  value="" type="text" class="input1" required="required"></td>
-                                              	  	<td align="left"><label class="fontstyles1" for="element_1">Secondary Phone</label></td>
-                                                  	<td><input id="Secondary_phone" name="Secondary_phone"  value="" type="text"  class="input1"></td>
-                                                  </tr>
-                                                  <tr>
-                                                  	<td align="left"><label class="fontstyles1" for="element_1">Primary Phone(extensions)</label></td>
-                                                  	<td><input id="Primary_note" name="Primary_note"  value="" type="text" class="input1">
-                                                  	</td>
-                                              	  	<td align="left"><label class="fontstyles1" for="element_1">Secondary Phone(extensions)</label></td>
-                                                  	<td><input id="Secondary_note" name="Secondary_note"  value="" type="text"  class="input1">
-                                                  	</td>
-                                                  </tr>
-                                              	  <tr>
-                                              	  	<td align="left"><label class="fontstyles1" for="element_1">Primary Email_Id</label></td>
-                                              	  	<td><input id="Primary_email" name="Primary_email"  value="" type="text"  class="input1"></td>
-                                              	  	<td align="left"><label class="fontstyles1" for="element_1">Secondary Email_Id</label></td>
-                                              	  	<td><input id="Secondary_email" name="Secondary_email"  value="" type="text"  class="input1"></td>
-                                              	  	
-                                              	  	
-                                              	  </tr>
-                                              	  <tr>
-                                              	  	<td align="left"><label class="fontstyles1" for="element_1">Fax</label></td>
-                                              	  	<td><input id="Fax" name="Fax"  value="" type="text"  class="input1"></td>
-                                              	  	<td align="left"><label class="fontstyles1" for="element_1">Job Title</label></td>
-                                              	  	<td><input id="Job_title" name="Job_title"  value="" type="text" class="input1"></td>
-                                              	  	
-                                              	  </tr>
-                                              	 
-                                              	  
-                                              	 </table>
-                                            </fieldset>
-        					<!-- Contact detials ends  -->
-        					        					
-        				</td>
-        			</tr>
-        			<!-- Contrat detials starts -->
-        			<tr>
-        				<td align="left">
-        					<fieldset>
-                            <legend>Contract</legend>
-        					<table>
-                            	<tr>
-                                	<td align="left"><label class="fontstyles1" for="element_1">Contract Start Date</label></td>
-                                    <td align="left"><input id="Contract_start" name="Contract_start"  value="" type="date" class="input1"></td>
-                                    
-                                </tr>
-                                <tr>
-                                	<td align="left"><label class="fontstyles1" for="element_1">Contract End Date</label></td>
-                                    <td align="left"><input id="Contract_end" name="Contract_end"  value="" type="date" class="input1"></td>
-                                </tr>
-                                <tr>
-               				        <td align="left"><label class="fontstyles1" for="element_1">Contract Document</label></td>
-                                    <td align="left"><input id="Contract_document" name="Contract_document" type="file" class="input1" onchange="checksize(event)"></td>
-                                 </tr>
-                                <tr>   
-                                    <td align="left"><label class="fontstyles1" for="element_1">Contract Active</label></td>
-                                   	<td><input id="Contract_active" name="Contract_active"  type="checkbox"></td>
-                                              	 
-                                </tr>
-                                <tr>
-                                              	  	<td><br><br></td>
-                                              	  </tr>
-                             </table>
-                        	</fieldset>
-        				</td>
         				<td>
-        					
         					<!-- Insurance table starts -->
         						<table>
         							<tr>
-        								<td align="left">
-        									<fieldset>
+        								<td>
+        									<fieldset class="fieldset-auto-width">
                                               <legend>Select Insurance</legend>
                                               	<div class="my-overflow">
                                               <table>
@@ -230,8 +140,6 @@ if(isset($_POST['ShopSubmitClose']))
                                                   $obj=new Controller_Insurance();
                                                   $datas=$obj->showAllInsurances();
                                                   $i=1;
-                                                  if($datas<>"")
-                                                  {
                                                   foreach ($datas as $data)
                                                   {
                                                       
@@ -268,7 +176,6 @@ if(isset($_POST['ShopSubmitClose']))
                                                       <?php 
                                                       $i=$i+1;
                                                   }
-                                                  }
                                                   ?>
                                                   	
                                               	  
@@ -283,18 +190,86 @@ if(isset($_POST['ShopSubmitClose']))
         					
         				</td>
         			</tr>
+        			<!-- Contrat detials starts -->
+        			<tr>
+        				<td colspan=2>
+        					<table>
+                            	<tr>
+                                	<td><label class="fontstyles1" for="element_1">Contract Start Date</label></td>
+                                    <td align="left"><input id="Contract_start" name="Contract_start"  value="" type="date" class="input1"></td>
+                                    <td><label class="fontstyles1" for="element_1">Contract End Date</label></td>
+                                    <td align="left"><input id="Contract_end" name="Contract_end"  value="" type="date" class="input1"></td>
+                                </tr>
+                                <tr>
+               				        <td><label class="fontstyles1" for="element_1">URL</label></td>
+                                    <td align="left"><input id="url" name="url"  value="" type="text" class="input1"></td>
+                                    <td><label class="fontstyles1" for="element_1">Contract Document</label></td>
+                                    <td align="left"><input id="Contract_document" name="Contract_document" type="file" class="input1" onchange="checksize(event)"></td>
+                                </tr>
+                             </table>
+                        	
+        				</td>
+        			</tr>
         			<!-- Contrat detials ends  -->
         			<tr >
         				<td colspan="2"  align="center">
-        			<input id="i_values" name="i_values"  class="input1"  value="<?php echo $i; ?>" type="hidden">
+        					<!-- Contact details starts  -->
+        						<fieldset>
+                                              <legend>Contact Details</legend>
+                                              <table>
+                                              	  <tr>
+                                              	  	<td><label class="fontstyles1" for="element_1">Primary Contact</label></td>
+                                              	  	<td><input id="Primary_contact" name="Primary_contact"  value="" type="text" class="input1" required="required"></td>
+                                              	  	<td><label class="fontstyles1" for="element_1">Secondary Contact</label></td>
+                                              	  	<td><input id="Secondary_contact" name="Secondary_contact"  value="" type="text" class="input1"></td>
+                                              	  	
+                                              	  </tr>
+                                                  <tr>
+                                                  	<td><label class="fontstyles1" for="element_1">Primary Phone</label></td>
+                                                  	<td><input id="Primary_phone" name="Primary_phone"  value="" type="text" class="input1" required="required"></td>
+                                              	  	<td><label class="fontstyles1" for="element_1">Secondary Phone</label></td>
+                                                  	<td><input id="Secondary_phone" name="Secondary_phone"  value="" type="text"  class="input1"></td>
+                                                  </tr>
+                                                  <tr>
+                                                  	<td><label class="fontstyles1" for="element_1">Primary Phone(extensions)</label></td>
+                                                  	<td><input id="Primary_note" name="Primary_note"  value="" type="text" class="input1">
+                                                  	</td>
+                                              	  	<td><label class="fontstyles1" for="element_1">Secondary Phone(extensions)</label></td>
+                                                  	<td><input id="Secondary_note" name="Secondary_note"  value="" type="text"  class="input1">
+                                                  	</td>
+                                                  </tr>
+                                              	  <tr>
+                                              	  	<td><label class="fontstyles1" for="element_1">Primary Email_Id</label></td>
+                                              	  	<td><input id="Primary_email" name="Primary_email"  value="" type="text"  class="input1"></td>
+                                              	  	<td><label class="fontstyles1" for="element_1">Secondary Email_Id</label></td>
+                                              	  	<td><input id="Secondary_email" name="Secondary_email"  value="" type="text"  class="input1"></td>
+                                              	  	
+                                              	  	
+                                              	  </tr>
+                                              	  <tr>
+                                              	  	<td><label class="fontstyles1" for="element_1">Fax</label></td>
+                                              	  	<td><input id="Fax" name="Fax"  value="" type="text"  class="input1"></td>
+                                              	  	<td><label class="fontstyles1" for="element_1">Job Title</label></td>
+                                              	  	<td><input id="Job_title" name="Job_title"  value="" type="text" class="input1"></td>
+                                              	  	
+                                              	  </tr>
+                                              	  <tr>
+                                              	  	<td><label class="fontstyles1" for="element_1">Contract Active</label></td>
+                                                  	<td><input id="Contract_active" name="Contract_active"  type="checkbox"></td>
+                                              	  </tr>
+                                              	  
+                                              	 </table>
+                                            </fieldset>
+        					<!-- Contact detials ends  -->
+        					<input id="i_values" name="i_values"  class="input1"  value="<?php echo $i; ?>" type="hidden">
         				</td>
         			</tr>	
         			<tr >
         				<td  align="center">
-        					<input  class="button-save" type="submit" name="ShopSubmit" value="Save">
+        					<input  class="btn btn-primary btn-block btn-large" type="submit" name="ShopSubmit" value="Save">
         				</td>
         				<td  align="center">
-        					<input  class="button-save" type="submit" name="ShopSubmitClose" value="Save & Close">
+        					<input  class="btn btn-primary btn-block btn-large" type="submit" name="ShopSubmitClose" value="Save & Close">
         				</td>
         			</tr>		
         		</table>

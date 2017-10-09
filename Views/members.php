@@ -32,17 +32,17 @@ if(isset($_POST['MemberSubmitClose']))
     die();
 }
 ?>
- <div class="members">	
+ <div>	
  <table>
  	<tr>
  		<td>
  			<form method="post" action="">
     			<table>
     				<tr>
-    					<td>Hello <?php echo $_SESSION['username'];?> !</td>
+    					<td align="left"><h2>Hello <?php echo $_SESSION['username'];?> !</h2></td>
     					
-    					<td><input type="submit" name="mainpage" value="Close"  class="small small-primary small-block small-large"></td>
-    					<td><input type="submit" name="logout" value="Logout"  class="btn btn-primary btn-block btn-large"></td>
+    					<td><input type="submit" name="mainpage" value="Close"  class="button-close"></td>
+    					<td><input type="submit" name="logout" value="Logout"  class="button-logout"></td>
     				</tr>
     			</table>
     			</form>
@@ -252,10 +252,10 @@ if(isset($_POST['MemberSubmitClose']))
     		<table>
     			<tr>
     				<td align="center">
-    					<input   class="btn btn-primary btn-block btn-large" type="submit" name="MemberSubmit" value="Save">
+    					<input   class="button-save" type="submit" name="MemberSubmit" value="Save">
         				</td>
         				<td  align="center">
-        					<input   class="btn btn-primary btn-block btn-large" type="submit" name="MemberSubmitClose" value="Save & Close">
+        					<input   class="button-save" type="submit" name="MemberSubmitClose" value="Save & Close">
         		
     				</td>
     			</tr>

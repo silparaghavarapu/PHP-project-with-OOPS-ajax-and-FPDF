@@ -23,15 +23,11 @@ if(isset($_POST['ShowReport']))
    //  header("Location:".BASEPATH);
 }
 ?>
-<div class="shop">
+
     <form method="post" name="show_list" id="show_list" action="">
     
 		<table>
-			<tr>
-				<td align="left">
-					Hello <?php echo $_SESSION['username'];?> !
-				</td>
-			</tr>
+			
 			<tr>
 				<td>
 					<!-- page header starts -->
@@ -43,11 +39,12 @@ if(isset($_POST['ShowReport']))
 							<td>
 								<table>
 									<tr>
+										<td align="left"><h2>Hello <?php echo $_SESSION['username'];?> !</h2></td>
 										<td>
-											<input type="submit" name="mainpage" value="Close" class="small small-primary small-block small-large">
+											<input type="submit" name="mainpage" value="Close" class="button-close">
 										</td>
 										<td>
-											<input type="submit" name="logout" value="Logout" class="small small-primary small-block small-large">
+											<input type="submit" name="logout" value="Logout" class="button-logout">
 										</td>
 									</tr>
 										
@@ -102,7 +99,7 @@ if(isset($_POST['ShowReport']))
 						</tr>
 						<tr>
 							<td colspan=2 align="center">
-								<input type="submit" name="ShowReport" Value="Generate Report"  class="btn btn-primary btn-block btn-large"> 
+								<input type="submit" name="ShowReport" Value="Generate Report"  class="button-save"> 
 							</td>
 						</tr>
 					</table>
@@ -113,4 +110,4 @@ if(isset($_POST['ShowReport']))
 		</table>
     	
     </form>
-    </div>
+
